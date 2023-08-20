@@ -12,15 +12,18 @@ git push -u origin main
 git remote add origin https://github.com/gustavo1512/sireho.git
 git branch -M main
 git push -u origin main
+git pull
+
 
 https://rogerdudler.github.io/git-guide/index.es.html
 
 Para guardar cambios
 
 git branch -M main
-git push -u origin main
-git add
+
+git add .
 git commit -m "first commit"
+git push -u origin main
 
 Entorno de desarrollo
 
@@ -40,6 +43,7 @@ ejecutar los comandos desde cmd dentro de la carpeta servidor
 --instalacion dependencias
 npm install 
 --ejecusion del programa
+chmod u+x ./mvnw
 ./mvnw 
 
 

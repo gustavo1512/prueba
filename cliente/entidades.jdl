@@ -1,14 +1,3 @@
-
-application {
-  config {
-    baseName sireho,
-    applicationType monolith,
-    authenticationType jwt,
-    prodDatabaseType mysql
-  }
-  entities *
-}
-
 entity  Cliente {
 nombre String
 apellido String
@@ -16,56 +5,95 @@ direccion String
 correo String
 telefono String
 }
+entity Tarifa{
+tipoTarifa String
+tarifaAdulto Double
+tarifaMenor Double 
+}
 
-entity  Habitaciones {
+entity  Habitacion {
 tipo String
-piso Long
+capacidadAdulto Long
+capacidadMenor Long
+//FK tarifa
 disponible Boolean
-}
-
-entity Reservaciones {
-fechaInicio Instant
-fechaFinal Instant 
-
-}
-
-entity Factura {
-cantidadPaga Long
-fechaPago Instant 
-metodoPgo String
-}
-
-entity Eventos {
-nombreEvento String 
-fechaHora Instant
-responsable String
-capacidad Long
-participantes Long
-}
-
-entity Colaborador {
-nombreColaborador String
-cargo String
-departamento String
-numTelefono Long
-correo String
 }
 
 entity TipoCargo {
 nombreCargo String
+precioHora Double
+}
+entity Colaborador {
+//FK TipoCargo
+nombreColaborador String
+numTelefono Long
+correo String
+}
+entity Persona {
+fechaNacimiento Instant
+tipo String
+}
+entity ReservarHabitacion {
+fechaReserva Instant
+fechaInicio Instant
+fechaFinal Instant 
+//FK Personas
+//FK Colaborador
+//FK Cliente
+//FK Habitacion
+totalReservacion Double
+}
 
+entity Evento {
+nombreEvento String 
+fechaHora Instant
+//FK Colaborador ->persona que organiza el evento 
+capacidadAdulto Long
+capacidadMenor Long
+//FK Tarifa
+}
+entity ReservarEvento {
+fechaReservacion Instant 
+//FK Personas
+//FK Colaborador
+//FK Cliente
+//FK Evento
+totalReservacion Double
+}
+
+entity DetalleFactura {
+//FK ReservarEvento
+//FK ReservarHabitacion
+  fechaEmitido Long
+ 
+  
+}
+entity Factura {
+//FK DetalleFactura
+//FK Colaborador
+//FK Cliente
+metodoPago String
+ subtotal Double
+  montoTotal Double
+  impuesto Double
 }
 
 relationship OneToMany {
-
-  Cliente to Reservaciones{clienteReservaciones}
+  Cliente to ReservarHabitacion{clienteReservaHabitacion}
+  Colaborador to ReservarHabitacion{colaboradorReservaHabitacion}
+   Cliente to ReservarEvento{clienteReservaEvento}
+  Colaborador to ReservarEvento{colaboradorReservaEvento}
+   Persona to ReservarHabitacion{Ocupantes}
   TipoCargo to Colaborador{tipoCargoColaborador}
-  Colaborador to Reservaciones{colaboradorResrvaciones}
-  Factura to Habitaciones{facturaHabitaciones}
-  Eventos to Reservaciones{eventosReservaciones}
+  DetalleFactura to Factura{detalleFactura}
+  Colaborador to Evento{Encargado}
+  Cliente to Factura {ClienteFactura}
+  Colaborador to Factura{clienteColaborador}
 }
-
-relationship OneToOne {
-   Reservaciones{habitacionesReservaciones} to Habitaciones
+relationship OneToOne{
+ ReservarHabitacion{Habitacion} to Habitacion 
+ DetalleFactura {HabitacionReservada} to ReservarHabitacion
+DetalleFactura  {EventoReservado} to ReservarEvento
+ Evento {Tarifa} to Tarifa
+ Habitacion {Tarifa} to Tarifa
 }
-    

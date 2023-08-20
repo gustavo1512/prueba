@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity ReservarEvento.
+    -->
+    <changeSet id="20230807065840-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="cliente_reserva_evento_id"
+                                 baseTableName="reservar_evento"
+                                 constraintName="fk_reservar_evento__cliente_reserva_evento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cliente"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="colaborador_reserva_evento_id"
+                                 baseTableName="reservar_evento"
+                                 constraintName="fk_reservar_evento__colaborador_reserva_evento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="colaborador"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,27 @@
+{
+  "clienteApp": {
+    "detalleFactura": {
+      "home": {
+        "title": "DetalleFacturas",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Detalle Factura",
+        "createOrEditLabel": "Créer ou éditer un Detalle Factura",
+        "notFound": "Aucun Detalle Factura trouvé"
+      },
+      "created": "Un nouveau Detalle Factura a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Detalle Factura avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Detalle Factura avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Detalle Factura {{ id }} ?"
+      },
+      "detail": {
+        "title": "Detalle Factura"
+      },
+      "id": "ID",
+      "fechaEmitido": "Fecha Emitido",
+      "habitacionReservada": "Habitacion Reservada",
+      "eventoReservado": "Evento Reservado",
+      "factura": "Factura"
+    }
+  }
+}

@@ -1,0 +1,169 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-reservar-habitacion-heading"
+        data-cy="ReservarHabitacionCreateUpdateHeading"
+        jhiTranslate="clienteApp.reservarHabitacion.home.createOrEditLabel"
+      >
+        Crear o editar Reservar Habitacion
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.reservarHabitacion.fechaReserva" for="field_fechaReserva">Fecha Reserva</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaReserva"
+              data-cy="fechaReserva"
+              type="datetime-local"
+              class="form-control"
+              name="fechaReserva"
+              formControlName="fechaReserva"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.reservarHabitacion.fechaInicio" for="field_fechaInicio">Fecha Inicio</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaInicio"
+              data-cy="fechaInicio"
+              type="datetime-local"
+              class="form-control"
+              name="fechaInicio"
+              formControlName="fechaInicio"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.reservarHabitacion.fechaFinal" for="field_fechaFinal">Fecha Final</label>
+          <div class="d-flex">
+            <input
+              id="field_fechaFinal"
+              data-cy="fechaFinal"
+              type="datetime-local"
+              class="form-control"
+              name="fechaFinal"
+              formControlName="fechaFinal"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.reservarHabitacion.totalReservacion" for="field_totalReservacion"
+            >Total Reservacion</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="totalReservacion"
+            id="field_totalReservacion"
+            data-cy="totalReservacion"
+            formControlName="totalReservacion"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.reservarHabitacion.habitacion" for="field_habitacion">Habitacion</label>
+          <select
+            class="form-control"
+            id="field_habitacion"
+            data-cy="habitacion"
+            name="habitacion"
+            formControlName="habitacion"
+            [compareWith]="compareHabitacion"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="habitacionOption" *ngFor="let habitacionOption of habitacionsCollection">{{ habitacionOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="clienteApp.reservarHabitacion.clienteReservaHabitacion"
+            for="field_clienteReservaHabitacion"
+            >Cliente Reserva Habitacion</label
+          >
+          <select
+            class="form-control"
+            id="field_clienteReservaHabitacion"
+            data-cy="clienteReservaHabitacion"
+            name="clienteReservaHabitacion"
+            formControlName="clienteReservaHabitacion"
+            [compareWith]="compareCliente"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="clienteOption" *ngFor="let clienteOption of clientesSharedCollection">{{ clienteOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="clienteApp.reservarHabitacion.colaboradorReservaHabitacion"
+            for="field_colaboradorReservaHabitacion"
+            >Colaborador Reserva Habitacion</label
+          >
+          <select
+            class="form-control"
+            id="field_colaboradorReservaHabitacion"
+            data-cy="colaboradorReservaHabitacion"
+            name="colaboradorReservaHabitacion"
+            formControlName="colaboradorReservaHabitacion"
+            [compareWith]="compareColaborador"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="colaboradorOption" *ngFor="let colaboradorOption of colaboradorsSharedCollection">
+              {{ colaboradorOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.reservarHabitacion.ocupantes" for="field_ocupantes">Ocupantes</label>
+          <select
+            class="form-control"
+            id="field_ocupantes"
+            data-cy="ocupantes"
+            name="ocupantes"
+            formControlName="ocupantes"
+            [compareWith]="comparePersona"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="personaOption" *ngFor="let personaOption of personasSharedCollection">{{ personaOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Guardar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,11 +1,15 @@
 {
-  "applications": ["sireho"],
-  "changelogDate": "20230718040231",
+  "applications": "*",
+  "changelogDate": "20230807065709",
   "entityTableName": "tipo_cargo",
   "fields": [
     {
       "fieldName": "nombreCargo",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "precioHora",
+      "fieldType": "Double"
     }
   ],
   "name": "TipoCargo",

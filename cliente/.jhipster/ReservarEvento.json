@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "changelogDate": "20230807065707",
+  "entityTableName": "reservar_evento",
+  "fields": [
+    {
+      "fieldName": "fechaReservacion",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "totalReservacion",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "ReservarEvento",
+  "relationships": [
+    {
+      "otherEntityName": "cliente",
+      "relationshipName": "clienteReservaEvento",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "colaborador",
+      "relationshipName": "colaboradorReservaEvento",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

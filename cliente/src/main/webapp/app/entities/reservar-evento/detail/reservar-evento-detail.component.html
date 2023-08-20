@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reservarEvento">
+      <h2 data-cy="reservarEventoDetailsHeading"><span jhiTranslate="clienteApp.reservarEvento.detail.title">Reservar Evento</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reservarEvento.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarEvento.fechaReservacion">Fecha Reservacion</span></dt>
+        <dd>
+          <span>{{ reservarEvento.fechaReservacion | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarEvento.totalReservacion">Total Reservacion</span></dt>
+        <dd>
+          <span>{{ reservarEvento.totalReservacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarEvento.clienteReservaEvento">Cliente Reserva Evento</span></dt>
+        <dd>
+          <div *ngIf="reservarEvento.clienteReservaEvento">
+            <a [routerLink]="['/cliente', reservarEvento.clienteReservaEvento.id, 'view']">{{ reservarEvento.clienteReservaEvento.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarEvento.colaboradorReservaEvento">Colaborador Reserva Evento</span></dt>
+        <dd>
+          <div *ngIf="reservarEvento.colaboradorReservaEvento">
+            <a [routerLink]="['/colaborador', reservarEvento.colaboradorReservaEvento.id, 'view']">{{
+              reservarEvento.colaboradorReservaEvento.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/reservar-evento', reservarEvento.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

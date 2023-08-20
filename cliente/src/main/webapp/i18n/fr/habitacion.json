@@ -1,0 +1,29 @@
+{
+  "clienteApp": {
+    "habitacion": {
+      "home": {
+        "title": "Habitacions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Habitacion",
+        "createOrEditLabel": "Créer ou éditer un Habitacion",
+        "notFound": "Aucun Habitacion trouvé"
+      },
+      "created": "Un nouveau Habitacion a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Habitacion avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Habitacion avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Habitacion {{ id }} ?"
+      },
+      "detail": {
+        "title": "Habitacion"
+      },
+      "id": "ID",
+      "tipo": "Tipo",
+      "capacidadAdulto": "Capacidad Adulto",
+      "capacidadMenor": "Capacidad Menor",
+      "disponible": "Disponible",
+      "tarifa": "Tarifa",
+      "reservarHabitacion": "Reservar Habitacion"
+    }
+  }
+}

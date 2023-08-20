@@ -1,0 +1,32 @@
+{
+  "clienteApp": {
+    "reservarHabitacion": {
+      "home": {
+        "title": "Reservar Habitacions",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Reservar Habitacion",
+        "createOrEditLabel": "Crear o editar Reservar Habitacion",
+        "notFound": "Ningún Reservar Habitacions encontrado"
+      },
+      "created": "Un nuevo Reservar Habitacion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Reservar Habitacion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Reservar Habitacion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Reservar Habitacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Reservar Habitacion"
+      },
+      "id": "ID",
+      "fechaReserva": "Fecha Reserva",
+      "fechaInicio": "Fecha Inicio",
+      "fechaFinal": "Fecha Final",
+      "totalReservacion": "Total Reservacion",
+      "habitacion": "Habitacion",
+      "clienteReservaHabitacion": "Cliente Reserva Habitacion",
+      "colaboradorReservaHabitacion": "Colaborador Reserva Habitacion",
+      "ocupantes": "Ocupantes",
+      "detalleFactura": "Detalle Factura"
+    }
+  }
+}

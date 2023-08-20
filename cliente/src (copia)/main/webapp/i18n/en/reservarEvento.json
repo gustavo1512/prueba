@@ -1,0 +1,28 @@
+{
+  "clienteApp": {
+    "reservarEvento": {
+      "home": {
+        "title": "Reservar Eventos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reservar Evento",
+        "createOrEditLabel": "Create or edit a Reservar Evento",
+        "notFound": "No Reservar Eventos found"
+      },
+      "created": "A new Reservar Evento is created with identifier {{ param }}",
+      "updated": "A Reservar Evento is updated with identifier {{ param }}",
+      "deleted": "A Reservar Evento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reservar Evento {{ id }}?"
+      },
+      "detail": {
+        "title": "Reservar Evento"
+      },
+      "id": "ID",
+      "fechaReservacion": "Fecha Reservacion",
+      "totalReservacion": "Total Reservacion",
+      "clienteReservaEvento": "Cliente Reserva Evento",
+      "colaboradorReservaEvento": "Colaborador Reserva Evento",
+      "detalleFactura": "Detalle Factura"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20230807065836",
+  "entityTableName": "evento",
+  "fields": [
+    {
+      "fieldName": "nombreEvento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaHora",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "capacidadAdulto",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "capacidadMenor",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Evento",
+  "relationships": [
+    {
+      "otherEntityName": "tarifa",
+      "relationshipName": "tarifa",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "colaborador",
+      "relationshipName": "encargado",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

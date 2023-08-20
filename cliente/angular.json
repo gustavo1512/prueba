@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sireho": {
+    "cliente": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,15 +76,15 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "sireho:build:development",
+            "browserTarget": "cliente:build:development",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "browserTarget": "sireho:build:production"
+              "browserTarget": "cliente:build:production"
             },
             "development": {
-              "browserTarget": "sireho:build:development"
+              "browserTarget": "cliente:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,6 +105,6 @@
       "environment": "all"
     },
     "packageManager": "npm",
-    "analytics": "4572cbc9-bd58-46e0-9a26-8ea560bc3666"
+    "analytics": "373c0171-94e9-4ba6-b3d3-e12f5fc21929"
   }
 }

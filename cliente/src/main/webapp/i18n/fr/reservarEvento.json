@@ -1,0 +1,28 @@
+{
+  "clienteApp": {
+    "reservarEvento": {
+      "home": {
+        "title": "ReservarEventos",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Reservar Evento",
+        "createOrEditLabel": "Créer ou éditer un Reservar Evento",
+        "notFound": "Aucun Reservar Evento trouvé"
+      },
+      "created": "Un nouveau Reservar Evento a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Reservar Evento avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Reservar Evento avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Reservar Evento {{ id }} ?"
+      },
+      "detail": {
+        "title": "Reservar Evento"
+      },
+      "id": "ID",
+      "fechaReservacion": "Fecha Reservacion",
+      "totalReservacion": "Total Reservacion",
+      "clienteReservaEvento": "Cliente Reserva Evento",
+      "colaboradorReservaEvento": "Colaborador Reserva Evento",
+      "detalleFactura": "Detalle Factura"
+    }
+  }
+}

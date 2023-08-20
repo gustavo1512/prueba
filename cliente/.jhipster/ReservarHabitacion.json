@@ -1,0 +1,50 @@
+{
+  "applications": "*",
+  "changelogDate": "20230807065702",
+  "entityTableName": "reservar_habitacion",
+  "fields": [
+    {
+      "fieldName": "fechaReserva",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaFinal",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "totalReservacion",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "ReservarHabitacion",
+  "relationships": [
+    {
+      "otherEntityName": "habitacion",
+      "relationshipName": "habitacion",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "cliente",
+      "relationshipName": "clienteReservaHabitacion",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "colaborador",
+      "relationshipName": "colaboradorReservaHabitacion",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "persona",
+      "relationshipName": "ocupantes",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

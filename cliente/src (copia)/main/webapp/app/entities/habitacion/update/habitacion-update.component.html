@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-habitacion-heading" data-cy="HabitacionCreateUpdateHeading" jhiTranslate="clienteApp.habitacion.home.createOrEditLabel">
+        Crear o editar Habitacion
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.habitacion.tipo" for="field_tipo">Tipo</label>
+          <input type="text" class="form-control" name="tipo" id="field_tipo" data-cy="tipo" formControlName="tipo" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.habitacion.capacidadAdulto" for="field_capacidadAdulto"
+            >Capacidad Adulto</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="capacidadAdulto"
+            id="field_capacidadAdulto"
+            data-cy="capacidadAdulto"
+            formControlName="capacidadAdulto"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.habitacion.capacidadMenor" for="field_capacidadMenor">Capacidad Menor</label>
+          <input
+            type="number"
+            class="form-control"
+            name="capacidadMenor"
+            id="field_capacidadMenor"
+            data-cy="capacidadMenor"
+            formControlName="capacidadMenor"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.habitacion.disponible" for="field_disponible">Disponible</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="disponible"
+            id="field_disponible"
+            data-cy="disponible"
+            formControlName="disponible"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="clienteApp.habitacion.tarifa" for="field_tarifa">Tarifa</label>
+          <select
+            class="form-control"
+            id="field_tarifa"
+            data-cy="tarifa"
+            name="tarifa"
+            formControlName="tarifa"
+            [compareWith]="compareTarifa"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="tarifaOption" *ngFor="let tarifaOption of tarifasCollection">{{ tarifaOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Guardar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

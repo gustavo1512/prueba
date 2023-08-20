@@ -1,0 +1,28 @@
+{
+  "clienteApp": {
+    "tarifa": {
+      "home": {
+        "title": "Tarifas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tarifa",
+        "createOrEditLabel": "Create or edit a Tarifa",
+        "notFound": "No Tarifas found"
+      },
+      "created": "A new Tarifa is created with identifier {{ param }}",
+      "updated": "A Tarifa is updated with identifier {{ param }}",
+      "deleted": "A Tarifa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tarifa {{ id }}?"
+      },
+      "detail": {
+        "title": "Tarifa"
+      },
+      "id": "ID",
+      "tipoTarifa": "Tipo Tarifa",
+      "tarifaAdulto": "Tarifa Adulto",
+      "tarifaMenor": "Tarifa Menor",
+      "evento": "Evento",
+      "habitacion": "Habitacion"
+    }
+  }
+}

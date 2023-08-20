@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reservarHabitacion">
+      <h2 data-cy="reservarHabitacionDetailsHeading">
+        <span jhiTranslate="clienteApp.reservarHabitacion.detail.title">Reservar Habitacion</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reservarHabitacion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.fechaReserva">Fecha Reserva</span></dt>
+        <dd>
+          <span>{{ reservarHabitacion.fechaReserva | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.fechaInicio">Fecha Inicio</span></dt>
+        <dd>
+          <span>{{ reservarHabitacion.fechaInicio | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.fechaFinal">Fecha Final</span></dt>
+        <dd>
+          <span>{{ reservarHabitacion.fechaFinal | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.totalReservacion">Total Reservacion</span></dt>
+        <dd>
+          <span>{{ reservarHabitacion.totalReservacion }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.habitacion">Habitacion</span></dt>
+        <dd>
+          <div *ngIf="reservarHabitacion.habitacion">
+            <a [routerLink]="['/habitacion', reservarHabitacion.habitacion.id, 'view']">{{ reservarHabitacion.habitacion.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.clienteReservaHabitacion">Cliente Reserva Habitacion</span></dt>
+        <dd>
+          <div *ngIf="reservarHabitacion.clienteReservaHabitacion">
+            <a [routerLink]="['/cliente', reservarHabitacion.clienteReservaHabitacion.id, 'view']">{{
+              reservarHabitacion.clienteReservaHabitacion.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.colaboradorReservaHabitacion">Colaborador Reserva Habitacion</span></dt>
+        <dd>
+          <div *ngIf="reservarHabitacion.colaboradorReservaHabitacion">
+            <a [routerLink]="['/colaborador', reservarHabitacion.colaboradorReservaHabitacion.id, 'view']">{{
+              reservarHabitacion.colaboradorReservaHabitacion.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.reservarHabitacion.ocupantes">Ocupantes</span></dt>
+        <dd>
+          <div *ngIf="reservarHabitacion.ocupantes">
+            <a [routerLink]="['/persona', reservarHabitacion.ocupantes.id, 'view']">{{ reservarHabitacion.ocupantes.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/reservar-habitacion', reservarHabitacion.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,157 @@
+<div>
+  <h2 id="page-heading" data-cy="ReservarHabitacionHeading">
+    <span jhiTranslate="clienteApp.reservarHabitacion.home.title">Reservar Habitacions</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="clienteApp.reservarHabitacion.home.refreshListLabel">Refrescar lista</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-reservar-habitacion"
+        [routerLink]="['/reservar-habitacion/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="clienteApp.reservarHabitacion.home.createLabel"> Crear nuevo Reservar Habitacion </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="reservarHabitacions?.length === 0">
+    <span jhiTranslate="clienteApp.reservarHabitacion.home.notFound">Ningún Reservar Habitacions encontrado</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="reservarHabitacions && reservarHabitacions.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fechaReserva">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.fechaReserva">Fecha Reserva</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fechaInicio">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.fechaInicio">Fecha Inicio</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fechaFinal">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.fechaFinal">Fecha Final</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="totalReservacion">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.totalReservacion">Total Reservacion</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="habitacion.id">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.habitacion">Habitacion</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="clienteReservaHabitacion.id">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.clienteReservaHabitacion">Cliente Reserva Habitacion</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="colaboradorReservaHabitacion.id">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.colaboradorReservaHabitacion">Colaborador Reserva Habitacion</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ocupantes.id">
+            <div class="d-flex">
+              <span jhiTranslate="clienteApp.reservarHabitacion.ocupantes">Ocupantes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservarHabitacion of reservarHabitacions; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/reservar-habitacion', reservarHabitacion.id, 'view']">{{ reservarHabitacion.id }}</a>
+          </td>
+          <td>{{ reservarHabitacion.fechaReserva | formatMediumDatetime }}</td>
+          <td>{{ reservarHabitacion.fechaInicio | formatMediumDatetime }}</td>
+          <td>{{ reservarHabitacion.fechaFinal | formatMediumDatetime }}</td>
+          <td>{{ reservarHabitacion.totalReservacion }}</td>
+          <td>
+            <div *ngIf="reservarHabitacion.habitacion">
+              <a [routerLink]="['/habitacion', reservarHabitacion.habitacion.id, 'view']">{{ reservarHabitacion.habitacion.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="reservarHabitacion.clienteReservaHabitacion">
+              <a [routerLink]="['/cliente', reservarHabitacion.clienteReservaHabitacion.id, 'view']">{{
+                reservarHabitacion.clienteReservaHabitacion.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="reservarHabitacion.colaboradorReservaHabitacion">
+              <a [routerLink]="['/colaborador', reservarHabitacion.colaboradorReservaHabitacion.id, 'view']">{{
+                reservarHabitacion.colaboradorReservaHabitacion.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="reservarHabitacion.ocupantes">
+              <a [routerLink]="['/persona', reservarHabitacion.ocupantes.id, 'view']">{{ reservarHabitacion.ocupantes.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/reservar-habitacion', reservarHabitacion.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Vista</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/reservar-habitacion', reservarHabitacion.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+              </button>
+
+              <button type="submit" (click)="delete(reservarHabitacion)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

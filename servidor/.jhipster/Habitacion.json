@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20230807065844",
+  "entityTableName": "habitacion",
+  "fields": [
+    {
+      "fieldName": "tipo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "capacidadAdulto",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "capacidadMenor",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "disponible",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Habitacion",
+  "relationships": [
+    {
+      "otherEntityName": "tarifa",
+      "relationshipName": "tarifa",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

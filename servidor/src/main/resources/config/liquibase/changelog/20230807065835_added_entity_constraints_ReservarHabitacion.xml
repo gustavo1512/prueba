@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity ReservarHabitacion.
+    -->
+    <changeSet id="20230807065835-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="habitacion_id"
+                                 baseTableName="reservar_habitacion"
+                                 constraintName="fk_reservar_habitacion__habitacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="habitacion"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="cliente_reserva_habitacion_id"
+                                 baseTableName="reservar_habitacion"
+                                 constraintName="fk_reservar_habitacion__cliente_reserva_habitacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cliente"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="colaborador_reserva_habitacion_id"
+                                 baseTableName="reservar_habitacion"
+                                 constraintName="fk_reservar_habitacion__colaborador_reserva_habitacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="colaborador"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="ocupantes_id"
+                                 baseTableName="reservar_habitacion"
+                                 constraintName="fk_reservar_habitacion__ocupantes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="persona"
+                                 />
+    </changeSet>
+</databaseChangeLog>

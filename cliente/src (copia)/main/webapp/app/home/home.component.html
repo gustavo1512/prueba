@@ -1,0 +1,331 @@
+<!-- Masthead-->
+   <header class="masthead">
+    <div class="container">
+
+      <div [ngSwitch]="account !== null">
+        <div class="masthead-subheading">Bienvenido a SIREHO</div>
+        <div class="masthead-heading text-uppercase">Visita nuestro hotel</div>
+
+        <div class="alert alert-success" *ngSwitchCase="true">
+          <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
+            >Está conectado como "{{ account.login }}".</span>
+        </div>
+  
+        <div  *ngSwitchCase="false">
+          <a class="btn btn-primary btn-xl text-uppercase" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">Iniciar sesión</a>
+        </div>
+  
+        <div class="portfolio-item" *ngSwitchCase="false">
+          <span jhiTranslate="global.messages.info.register.noaccount">¿Aún no tienes una cuenta?</span>&nbsp;
+          <a class="alert-link" routerLink="/account/register" jhiTranslate="global.messages.info.register.link">Crea una</a>
+
+        </div>
+      </div>
+    </div>
+</header>
+<section class="page-section bg-light" id="portfolio">
+  <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">Habitaciones</h2>
+          <h3 class="section-subheading text-muted">Para todos los gustos y presupuestos.</h3>
+      </div>
+      <div class="row">
+          <div class="col-lg-4 col-sm-6 mb-4">
+              <!-- Portfolio item 1-->
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                      <div class="portfolio-hover">
+                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="content/images/assets/img/portfolio/1.jpg" alt="..." />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">Matrimonial</div>
+                      <div class="portfolio-caption-subheading text-muted">Cama matrimonial, ambientación romantica,
+                         ideal para lunas de miel o visitas en pareja.</div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4">
+              <!-- Portfolio item 2-->
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                      <div class="portfolio-hover">
+                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="content/images/assets/img/portfolio/2.jpg" alt="..." />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">Familiar</div>
+                      <div class="portfolio-caption-subheading text-muted"> Espaciosas y admiten la posibilidad de camas supletorias, 
+                     individuales pequeñas para niños.</div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4">
+              <!-- Portfolio item 3-->
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                      <div class="portfolio-hover">
+                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="content/images/assets/img/portfolio/3.jpg" alt="..." />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">Compartidas</div>
+                      <div class="portfolio-caption-subheading text-muted">Dispuestas en literas donde su público objetivo es el más joven
+                         y ofrecen aforo desde 4 personas a más de 10</div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+              <!-- Portfolio item 4-->
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                      <div class="portfolio-hover">
+                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="content/images/assets/img/portfolio/4.jpg" alt="..." />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">Suite principal</div>
+                      <div class="portfolio-caption-subheading text-muted">La más lujosa del complejo hotelero, c
+                        on más espacio y servicios que el resto.</div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+              <!-- Portfolio item 5-->
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                      <div class="portfolio-hover">
+                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="content/images/assets/img/portfolio/5.jpg" alt="..." />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">Cabaña</div>
+                      <div class="portfolio-caption-subheading text-muted">Rústica rodeada de natureleza. </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+              <!-- Portfolio item 6-->
+              <div class="portfolio-item">
+                  <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                      <div class="portfolio-hover">
+                          <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                      </div>
+                      <img class="img-fluid" src="content/images/assets/img/portfolio/6.jpg" alt="..." />
+                  </a>
+                  <div class="portfolio-caption">
+                      <div class="portfolio-caption-heading">Bungalow</div>
+                      <div class="portfolio-caption-subheading text-muted">Casa de playa, con una sola planta y portal o galería 
+                        en la parte frontal, con vista al mar.</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- About-->
+<section class="page-section" id="about">
+  <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">Eventos</h2>
+          <h3 class="section-subheading text-muted">Tenemos una variedad de actividades programadas para disfrutar en este año.</h3>
+      </div>
+      <ul class="timeline">
+          <li>
+              <div class="timeline-image"><img class="rounded-circle img-fluid" src="content/images/assets/img/about/1.jpg" alt="..." /></div>
+              <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <h4>15-08-2023</h4>
+                      <h4 class="subheading">Dia de las madres</h4>
+                  </div>
+                  <div class="timeline-body"><p class="text-muted">Un evento que máma no se puede perder. 
+                    Música en vivo, hospedaje, juegos, spas, piscinas y tour de playa. 
+                  </p></div>
+              </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="content/images/assets/img/about/2.jpg" alt="..." /></div>
+            <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <h4>15-09-2023</h4>
+                      <h4 class="subheading">Mes de la patria</h4>
+                  </div>
+                  <div class="timeline-body"><p class="text-muted">Disfruta a lo tico y se parte de nuestras celebraciones pátrias. 
+                    Música tipica en vivo, animadores, dinámicas, reseña histórica, gastronomia nacional, hospedaje, tour de playa.</p></div>
+              </div>
+          </li>
+          <li>
+              <div class="timeline-image"><img class="rounded-circle img-fluid" src="content/images/assets/img/about/3.jpg" alt="..." /></div>
+              <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <h4>30-10-2023</h4>
+                      <h4 class="subheading">Halloween</h4>
+                  </div>
+                  <div class="timeline-body"><p class="text-muted">Fiesta de disfraces, dinámicas, leyendas nacionales, música en vivo
+                    gastromia de terror, playa de los sustos. 
+                  </p></div>
+              </div>
+          </li>
+          <li class="timeline-inverted">
+              <div class="timeline-image"><img class="rounded-circle img-fluid" src="content/images/assets/img/about/4.jpg" alt="..." /></div>
+              <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <h4>25-11-2023</h4>
+                      <h4 class="subheading">Convención empresarial</h4>
+                  </div>
+                  <div class="timeline-body"><p class="text-muted">El evento mas esperado del año.
+                     Los mejores coath en habilidades blandas, marketing y tecnologias.
+                    La mejor inversion empresarial. Suite principales todo incluido.</p></div>
+              </div>
+          </li>
+          <li class="timeline-inverted">
+              <div class="timeline-image">
+                  <h4>
+                      Crea
+                      <br />
+                      tu propio
+                      <br />
+                      evento
+                  </h4>
+              </div>
+          </li>
+      </ul>
+  </div>
+</section>
+<!-- Team-->
+<section class="page-section bg-light" id="team">
+  <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">Clientes satisfechos</h2>
+          <h3 class="section-subheading text-muted">Nuestra mejor presentación es la satisfación de nuestros clientes.</h3>
+      </div>
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="team-member">
+                  <img class="mx-auto rounded-circle" src="content/images/assets/img/team/1.jpg" alt="..." />
+                  <h4>Parveen Anand</h4>
+                  <p class="text-muted">Delegado ejecutivo de Coca Cola</p>
+                  <p class="text-muted">"Tragimos a los gerentes y resultados en ventas fueron sorprendentes"</p>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="team-member">
+                  <img class="mx-auto rounded-circle" src="content/images/assets/img/team/2.jpg" alt="..." />
+                  <h4>Diana Petersen</h4>
+                  <p class="text-muted">Visitante europea</p>
+                  <p class="text-muted">"La mejor estadia, la música, las comidas me encantaron..."</p>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="team-member">
+                  <img class="mx-auto rounded-circle" src="content/images/assets/img/team/3.jpg" alt="..." />
+                  <h4>Larry Parker</h4>
+                  <p class="text-muted">Padre de familia australiano</p>
+                  <p class="text-muted">"Mi familia está encantada, y desean volver cada año...."</p>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-8 mx-auto text-center"><p class="large text-muted"> Si ya nos vistaste, cuentanos tu experiencia
+            y queda participando en un plan vacacional todo incluido.</p></div>
+            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase">Participa</button></div>
+      </div>
+  </div>
+</section>
+<!-- Clients-->
+<div class="py-5">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-md-3 col-sm-6 my-3">
+              <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="content/images/assets/img/logos/ict.png" /></a>
+          </div>
+          <div class="col-md-3 col-sm-6 my-3">
+              <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="content/images/assets/img/logos/esencial.png"/></a>
+          </div>
+          <div class="col-md-3 col-sm-6 my-3">
+              <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="content/images/assets/img/logos/safe.jpg"/></a>
+          </div>
+          <div class="col-md-3 col-sm-6 my-3">
+              <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="content/images/assets/img/logos/sostenible.svg" /></a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Contact-->
+<section class="page-section" id="contact">
+  <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">Contáctenos</h2>
+          <h3 class="section-subheading text-muted">Un ejecutivo de ventas atenderá tus consultas.</h3>
+      </div>
+      <!-- * * * * * * * * * * * * * * *-->
+      <!-- * * SB Forms Contact Form * *-->
+      <!-- * * * * * * * * * * * * * * *-->
+      <!-- This form is pre-integrated with SB Forms.-->
+      <!-- To make this form functional, sign up at-->
+      <!-- https://startbootstrap.com/solution/contact-forms-->
+      <!-- to get an API token!-->
+      <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+          <div class="row align-items-stretch mb-5">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <!-- Name input-->
+                      <input class="form-control" id="name" type="text" placeholder="Su nombre*" data-sb-validations="required" />
+                      <div class="invalid-feedback" data-sb-feedback="name:required">Nombre completo.</div>
+                  </div>
+                  <div class="form-group">
+                      <!-- Email address input-->
+                      <input class="form-control" id="email" type="email" placeholder="@tucorreo.com *" data-sb-validations="required,email" />
+                      <div class="invalid-feedback" data-sb-feedback="email:required">Correo electrónico.</div>
+                      <div class="invalid-feedback" data-sb-feedback="email:email">Correo electrónico no válido.</div>
+                  </div>
+                  <div class="form-group mb-md-0">
+                      <!-- Phone number input-->
+                      <input class="form-control" id="phone" type="tel" placeholder="Teléfono *" data-sb-validations="required" />
+                      <div class="invalid-feedback" data-sb-feedback="phone:required">Número de tefono requerido.</div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group form-group-textarea mb-md-0">
+                      <!-- Message input-->
+                      <textarea class="form-control" id="message" placeholder="Danos a conocer tu consulta *" data-sb-validations="required"></textarea>
+                      <div class="invalid-feedback" data-sb-feedback="message:required">Consulta requerida.</div>
+                  </div>
+              </div>
+          </div>
+          <!-- Submit success message-->
+          <!---->
+          <!-- This is what your users will see when the form-->
+          <!-- has successfully submitted-->
+          <div class="d-none" id="submitSuccessMessage">
+              <div class="text-center text-white mb-3">
+                  <div class="fw-bolder">Form submission successful!</div>
+                  To activate this form, sign up at
+                  <br />
+                  <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+              </div>
+          </div>
+          <!-- Submit error message-->
+          <!---->
+          <!-- This is what your users will see when there is-->
+          <!-- an error submitting the form-->
+          <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+          <!-- Submit Button-->
+          <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar</button></div>
+      </form>
+  </div>
+</section>

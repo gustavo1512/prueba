@@ -1,0 +1,22 @@
+{
+  "applications": "*",
+  "changelogDate": "20230807065843",
+  "entityTableName": "tarifa",
+  "fields": [
+    {
+      "fieldName": "tipoTarifa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tarifaAdulto",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "tarifaMenor",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "Tarifa",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es" dir="ltr">
   <head>
-    
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>sireho</title>
-    <meta name="description" content="Description for sireho" />
+    <title>Sireho</title>
+    <meta name="description" content="Description for cliente" />
     <meta name="google" content="notranslate" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#000000" />
     <base href="/" />
+    <link rel="icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
-    
-      <!-- Favicon-->
-      <link rel="icon" type="image/x-icon" href="content/images/assets/favicon.ico" />
-      <!-- Font Awesome icons (free version)-->
-      <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-      <!-- Google fonts-->
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-   
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="content/images/assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
     <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
   </head>
   <body id="page-top">
@@ -118,24 +117,23 @@
       };
       function showError() {
         var errorElm = document.getElementById('jhipster-error');
-        if (errorElm && errorElm.style) {
+        if (errorElm?.style) {
           errorElm.style.display = 'block';
         }
       }
     </script>
-    <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
+    <!-- Google Analytics: uncomment and change both instances of UA-XXXXX-X to be your site's ID.
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXX-X');
     </script>-->
 
-      <!-- Bootstrap core JS-->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-      <!-- Core theme JS-->
-      <script src="content/js/scripts.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="content/js/scripts.js"></script>
   </body>
 </html>

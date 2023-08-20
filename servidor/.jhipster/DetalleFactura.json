@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20230807065837",
+  "entityTableName": "detalle_factura",
+  "fields": [
+    {
+      "fieldName": "fechaEmitido",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "DetalleFactura",
+  "relationships": [
+    {
+      "otherEntityName": "reservarHabitacion",
+      "relationshipName": "habitacionReservada",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "reservarEvento",
+      "relationshipName": "eventoReservado",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "factura",
+      "otherEntityRelationshipName": "detalleFactura",
+      "relationshipName": "factura",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

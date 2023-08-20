@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    com.myapp: INFO
+    com.mycompany.myapp: INFO
 
 management:
   prometheus:
@@ -34,22 +34,22 @@ spring:
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
-    url: jdbc:mysql://localhost:3306/sireho?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:sqlserver://localhost:1433;database=servidor;encrypt=false
   mail:
     host: localhost
     port: 25
     username:
     password:
   r2dbc:
-    url: r2dbc:mysql://localhost:3306/sireho?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-    username: root
-    password:
+    url: r2dbc:mssql://localhost:1433/servidor
+    username: SA
+    password: yourStrong(!)Password
   thymeleaf:
     cache: true
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
-# keytool -genkey -alias sireho -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias servidor -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # See details in topic "Create a Java Keystore (.JKS) from Let's Encrypt Certificates" on https://maximilian-boehm.com/en-gb/blog
@@ -92,7 +92,7 @@ jhipster:
         # - In the Consul configserver
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: MTE5YTg4NzRlNzc0OThjYWU3ZmE2NmU5YjRhYmQ5ZjYyYzYzNzFjODZkYWIxMmQ3NjNjMjg2NjMxOTkyMDYwNGU0YzIxMjZiMTZiYWQ4NmQ3ZjZkOGM3NzNlNDg0Y2ZkNTkyZmYxNWQ2MjU3MGIxMjRmNDJjZTgzNDliZGZkZjk=
+        base64-secret: ZjRmODg2NmY5MDc1YjVjYTg1OTQwODUwZDk4MTU5NDg3NmRlNWZjZmIyODg4YTlkNDMyMDc3NjNiMmEyZGE2NGIxM2Y2NDQ3MTI4ZDM3Y2IzYTBiNDY4YmMzYjRkYmNkNGQwNGI0ZWFkMjNkYjBhNzk1OWUyNTRkYjRkNGU5NDQ=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="habitacion">
+      <h2 data-cy="habitacionDetailsHeading"><span jhiTranslate="clienteApp.habitacion.detail.title">Habitacion</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ habitacion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.habitacion.tipo">Tipo</span></dt>
+        <dd>
+          <span>{{ habitacion.tipo }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.habitacion.capacidadAdulto">Capacidad Adulto</span></dt>
+        <dd>
+          <span>{{ habitacion.capacidadAdulto }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.habitacion.capacidadMenor">Capacidad Menor</span></dt>
+        <dd>
+          <span>{{ habitacion.capacidadMenor }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.habitacion.disponible">Disponible</span></dt>
+        <dd>
+          <span>{{ habitacion.disponible }}</span>
+        </dd>
+        <dt><span jhiTranslate="clienteApp.habitacion.tarifa">Tarifa</span></dt>
+        <dd>
+          <div *ngIf="habitacion.tarifa">
+            <a [routerLink]="['/tarifa', habitacion.tarifa.id, 'view']">{{ habitacion.tarifa.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/habitacion', habitacion.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

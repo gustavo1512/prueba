@@ -1,0 +1,27 @@
+{
+  "clienteApp": {
+    "detalleFactura": {
+      "home": {
+        "title": "Detalle Facturas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Detalle Factura",
+        "createOrEditLabel": "Create or edit a Detalle Factura",
+        "notFound": "No Detalle Facturas found"
+      },
+      "created": "A new Detalle Factura is created with identifier {{ param }}",
+      "updated": "A Detalle Factura is updated with identifier {{ param }}",
+      "deleted": "A Detalle Factura is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Detalle Factura {{ id }}?"
+      },
+      "detail": {
+        "title": "Detalle Factura"
+      },
+      "id": "ID",
+      "fechaEmitido": "Fecha Emitido",
+      "habitacionReservada": "Habitacion Reservada",
+      "eventoReservado": "Evento Reservado",
+      "factura": "Factura"
+    }
+  }
+}

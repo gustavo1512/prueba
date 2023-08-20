@@ -1,0 +1,26 @@
+{
+  "applications": "*",
+  "changelogDate": "20230807065838",
+  "entityTableName": "persona",
+  "fields": [
+    {
+      "fieldName": "fechaNacimiento",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Persona",
+  "relationships": [
+    {
+      "otherEntityName": "reservarHabitacion",
+      "otherEntityRelationshipName": "ocupantes",
+      "relationshipName": "reservarHabitacion",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}
