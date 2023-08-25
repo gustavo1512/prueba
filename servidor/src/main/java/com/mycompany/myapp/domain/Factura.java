@@ -8,7 +8,8 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A Factura.
+ * Factura. Gestiona todos los detallesFactura para dar un total por
+ * las reservaciones realizadas
  */
 @Table("factura")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -16,6 +17,9 @@ public class Factura implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+ * Propiedades de la clase FActura.
+ */
     @Id
     @Column("id")
     private Long id;
@@ -57,7 +61,9 @@ public class Factura implements Serializable {
     private Long clienteColaboradorId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
-
+/**
+ * Set y get de la clase FActura.
+ */
     public Long getId() {
         return this.id;
     }
@@ -190,7 +196,9 @@ public class Factura implements Serializable {
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
-
+/**
+ * Metodos de la clase
+ */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

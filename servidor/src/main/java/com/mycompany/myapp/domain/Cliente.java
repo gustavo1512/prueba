@@ -10,12 +10,13 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A Cliente.
+ * Clase cliente almacena todos los clientes que deseen realizar una reservación
  */
 @Table("cliente")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class Cliente implements Serializable {
 
+  // The code you provided is a Java class representing a domain object called "Cliente".
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -54,6 +55,11 @@ public class Cliente implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
+    /**
+     * Get y set de la clase
+     * 
+     * @return The method is returning a Long value, which is the id of the object.
+     */
     public Long getId() {
         return this.id;
     }

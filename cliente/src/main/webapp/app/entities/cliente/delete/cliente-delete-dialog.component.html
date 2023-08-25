@@ -1,3 +1,4 @@
+<!-- Vista que permite eliminar registros -->
 <form *ngIf="cliente" name="deleteForm" (ngSubmit)="confirmDelete(cliente.id!)">
   <div class="modal-header">
     <h4 class="modal-title" data-cy="clienteDeleteDialogHeading" jhiTranslate="entity.delete.title">Confirmar operación de borrado</h4>

@@ -7,7 +7,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A Habitacion.
+ * Clase que gestiona las habitaciones del hotel.
  */
 @Table("habitacion")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -15,6 +15,9 @@ public class Habitacion implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+ * Propiedades de la clase.
+ */
     @Id
     @Column("id")
     private Long id;
@@ -41,7 +44,9 @@ public class Habitacion implements Serializable {
     private Long tarifaId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
-
+/**
+ * Get y set de la clase.
+ */
     public Long getId() {
         return this.id;
     }

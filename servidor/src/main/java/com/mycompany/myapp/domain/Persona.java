@@ -11,7 +11,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A Persona.
+ * Clase Persona. Gestionas las personas en la aplicación
  */
 @Table("persona")
 @SuppressWarnings("common-java:DuplicatedBlocks")
@@ -19,6 +19,9 @@ public class Persona implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+ * Propiedades de laClase.
+ */
     @Id
     @Column("id")
     private Long id;

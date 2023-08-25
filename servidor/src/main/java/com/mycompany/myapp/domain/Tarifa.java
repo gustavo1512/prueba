@@ -7,7 +7,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A Tarifa.
+ * Clase Tarifa. EStablece las tarifas de las habitaciones por edad
  */
 @Table("tarifa")
 @SuppressWarnings("common-java:DuplicatedBlocks")

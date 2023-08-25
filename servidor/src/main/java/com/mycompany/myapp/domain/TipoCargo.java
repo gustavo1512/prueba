@@ -10,7 +10,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A TipoCargo.
+ * Clase TipoCargo. Gestiona los cargos de los colabores
  */
 @Table("tipo_cargo")
 @SuppressWarnings("common-java:DuplicatedBlocks")

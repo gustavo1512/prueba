@@ -9,14 +9,16 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A Evento.
+ * Clase Evento. Gestiona los eventos del hotel 
  */
 @Table("evento")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class Evento implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+/**
+ * Propiedades de laClase Evento.
+ */
     @Id
     @Column("id")
     private Long id;
@@ -50,7 +52,9 @@ public class Evento implements Serializable {
     private Long encargadoId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
-
+/**
+ * Get y set de la clase.
+ */
     public Long getId() {
         return this.id;
     }
@@ -161,7 +165,9 @@ public class Evento implements Serializable {
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
-
+/**
+ * Metodos de la clase
+ */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

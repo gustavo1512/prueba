@@ -10,13 +10,18 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A DetalleFactura.
+ * Detalle factura. Gestiona las facturas
+ *  generadas por la reservacion de un evento una habitación
  */
 @Table("detalle_factura")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class DetalleFactura implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    /**
+ * Propiedades de la clase Detalle factura.
+ * */
 
     @Id
     @Column("id")
@@ -42,7 +47,9 @@ public class DetalleFactura implements Serializable {
     private Long eventoReservadoId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
-
+/**
+ * Get y set de la clase Detalle factura. 
+ */
     public Long getId() {
         return this.id;
     }
@@ -145,7 +152,10 @@ public class DetalleFactura implements Serializable {
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
-
+/**
+ * Detalle factura. Metodos de la clase
+ *  
+ */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

@@ -9,7 +9,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A ReservarHabitacion.
+ * Clase ReservarHabitacion. Gestiona la reserva de las habitaciones.
  */
 @Table("reservar_habitacion")
 @SuppressWarnings("common-java:DuplicatedBlocks")

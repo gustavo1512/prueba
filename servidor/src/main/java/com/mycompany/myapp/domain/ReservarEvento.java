@@ -9,7 +9,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A ReservarEvento.
+ * Clase ReservarEvento. Permite reservar eventos
  */
 @Table("reservar_evento")
 @SuppressWarnings("common-java:DuplicatedBlocks")

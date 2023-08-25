@@ -10,6 +10,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 /**
  * An authority (a security role) used by Spring Security.
+ *Clase se seguridad creada para almacenar los roles de la app
  */
 @Table("jhi_authority")
 public class Authority implements Serializable, Persistable<String> {

@@ -10,13 +10,15 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
- * A Colaborador.
+ * Gestiona los colaboradores de la aplicacion
  */
 @Table("colaborador")
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class Colaborador implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+// Define los atributos de la clase.
 
     @Id
     @Column("id")
@@ -58,6 +60,9 @@ public class Colaborador implements Serializable {
     private Long tipoCargoColaboradorId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
+    // The above code is a Java class representing a "Colaborador" (collaborator) entity. It has various
+// Metodos set y get de las propiedades de la clase.
 
     public Long getId() {
         return this.id;
@@ -258,7 +263,7 @@ public class Colaborador implements Serializable {
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
-
+//metodos de la clase
     @Override
     public boolean equals(Object o) {
         if (this == o) {
